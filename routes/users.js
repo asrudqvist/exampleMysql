@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 // Get user list
 router.get('/userlist',function(req,res){
-	var db = req.db;
+	var db = req.db.db;
 	var sql = 'select * from people';
 	
 	db.query(sql, function (err, result) {

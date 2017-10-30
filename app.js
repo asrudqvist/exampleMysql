@@ -4,25 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 // Database - MySQL
-var mysql = require('mysql')
-var conInfo = process.env.MYSQLCONNSTR_localdb;
-var db = mysql.createConnection(conInfo);
-db.connect(function(err) {
-  if (err){
-	  //throw err;
-	  console.log("Error conecting to db\n" + err);
-	  console.log("-------------------------------");
-	  console.log(JSON.stringify(conInfo));
-	  console.log("-------------------------------");
-	  console.error(err.stack);
-  } else {
-	console.log('You are now connected to mysql...');
-  }
-});
-
-
-
+var db = require('./db/conmysql');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
