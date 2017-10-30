@@ -20,7 +20,7 @@ module.exports = function ()
 	}
     
 	this.connect = function(){
-		var obj = this.getConnObj(this.conInfo)
+		var obj = getConnObj(this.conInfo)
 		this.db = mysql.createConnection(obj);
 
 		this.db.connect(function(err) {
