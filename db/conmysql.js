@@ -9,11 +9,12 @@ module.exports = function ()
 	
 	function getConnObj (s)
 	{
-		var ds = /Data Source=([^;]+)/.exec(s)[1].split(":");
+		var ds = /Data Source=([^;]+)/.exec(s)[1]
+		var dds = ds.split(":");
 		console.log(ds);
 		return  {
-		  host     : ds[0],
-		  port	   : ds[1],
+		  host     : dds[0],
+		  port	   : dds[1],
 		  user     : /User Id=([^;]+)/.exec(s)[1],
 		  password : /Password=([^;]+)/.exec(s)[1],
 		  database : /Database=([^;]+)/.exec(s)[1]
