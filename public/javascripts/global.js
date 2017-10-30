@@ -61,7 +61,8 @@ var Users = {
 	validate: function(){
 		    var errorCount = 0;
 			$('#addUser input').each(function(index, val) {
-				if($(this).val() === '') { 
+				if($(this).val() === '') {
+					console.log($(this));
 					errorCount++; 
 				}
 			});
