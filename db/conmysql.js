@@ -9,7 +9,8 @@ module.exports = function ()
 	
 	function getConnObj (s)
 	{
-		var ds = /Data Source=([^;]+)/.exec(s)
+		console.log("s = [" + s +"]");
+		var ds = /Data Source=([^;]+)/.exec(s);
 		console.log(ds);
 		var dds = ds[1].split(":");
 		
