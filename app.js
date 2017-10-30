@@ -12,6 +12,9 @@ db.connect(function(err) {
   if (err){
 	  //throw err;
 	  console.log("Error conecting to db\n" + err);
+	  console.log("-------------------------------");
+	  console.log(JSON.stringify(conInfo));
+	  console.log("-------------------------------");
 	  console.error(err.stack);
   } else {
 	console.log('You are now connected to mysql...');
