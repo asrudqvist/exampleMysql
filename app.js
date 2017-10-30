@@ -10,9 +10,12 @@ var conInfo = process.env.MYSQLCONNSTR_localdb;
 var db = mysql.createConnection(conInfo);
 db.connect(function(err) {
   if (err){
-	  throw err;
+	  //throw err;
+	  console.log("Error conecting to db\n" + err);
+	  console.error(err.stack);
+  } else {
+	console.log('You are now connected to mysql...');
   }
-  console.log('You are now connected to mysql...')
 });
 
 
