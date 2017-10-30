@@ -9,7 +9,7 @@ module.exports = function ()
 	
 	function getConnObj (str)
 	{
-		var ds = /Data Source=([^;]+)/.exec(s)[1]
+		var ds = /Data Source=([^;]+)/.exec(str)[1]
 		return  {
 		  host     : ds[0],
 		  port	   : ds[1],
