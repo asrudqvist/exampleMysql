@@ -13,8 +13,8 @@ module.exports = function ()
 		return  {
 		  host     : ds[0],
 		  port	   : ds[1],
-		  user     : /User Id==([^;]+)/.exec(s)[1]
-		  password : /Password=([^;]+)/.exec(s)[1]
+		  user     : /User Id==([^;]+)/.exec(s)[1],
+		  password : /Password=([^;]+)/.exec(s)[1],
 		  database : /Database=([^;]+)/.exec(s)[1]
 		}
 	}
