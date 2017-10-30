@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Database - MySQL
-var db = require('./db/conmysql');
+var dbm = require('./db/conmysql');
+var db = new dbm();
 db.connect();
 
 var index = require('./routes/index');

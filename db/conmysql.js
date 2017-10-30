@@ -23,7 +23,7 @@ module.exports = function ()
 		var obj = this.getConnObj(this.conInfo)
 		this.db = mysql.createConnection(obj);
 
-		db.connect(function(err) {
+		this.db.connect(function(err) {
 		  if (err){
 			  //throw err;
 			  console.log("Error conecting to db\n" + err);
