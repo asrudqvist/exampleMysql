@@ -28,6 +28,7 @@ router.get('/userlist',function(req,res){
 router.post('/adduser', function(req,res){
 	var db = req.db.db;
 	var sql = 'insert into people (age,email,fullname,gender,location,username) values (?,?,?,?,?,?)';
+	console.log('Req body = ['+req.body+']');
 	var user = req.body;
 	console.log('add user ' + user.toString());
 	
