@@ -66,7 +66,8 @@ var Users = {
 					errorCount++; 
 				}
 			});
-			return errorCount;
+			return 0;
+			//return errorCount;
 	},
 	serializeNew: function(){
 		var newUser = {
@@ -108,7 +109,7 @@ var Users = {
 	},
 	addUser: function(event){
 		event.preventDefault();
-		var errorCount = 0;//Users.validate();
+		var errorCount = Users.validate();
 		if (errorCount == 0) {
 			var newUser = Users.serializeNew();
 			Users.postNewUser(newUser);
