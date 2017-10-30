@@ -9,9 +9,10 @@ module.exports = function ()
 	
 	function getConnObj (s)
 	{
-		var ds = /Data Source=([^;]+)/.exec(s)[1]
-		var dds = ds.split(":");
+		var ds = /Data Source=([^;]+)/.exec(s)
 		console.log(ds);
+		var dds = ds[1].split(":");
+		
 		return  {
 		  host     : dds[0],
 		  port	   : dds[1],
