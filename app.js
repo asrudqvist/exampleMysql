@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 // Database - MySQL
 var db = require('./db/conmysql');
+db.connect();
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
