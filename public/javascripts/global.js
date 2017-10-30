@@ -107,7 +107,7 @@ var Users = {
 	},
 	addUser: function(event){
 		event.preventDefault();
-		var errorCount = Users.validate();
+		var errorCount = 0;//Users.validate();
 		if (errorCount == 0) {
 			var newUser = Users.serializeNew();
 			Users.postNewUser(newUser);

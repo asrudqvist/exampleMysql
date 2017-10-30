@@ -26,13 +26,18 @@ router.get('/userlist',function(req,res){
 
 // Add user
 router.post('/adduser', function(req,res){
-	var db = req.db;
-	var collection = db.get('userlist');
+	var db = req.db.db;
+	var sql = 'insert into people () values ()';
+	
+
 	console.log('add user ' + req.body.toString());
 	
-	collection.insert(req.body,function(err,result){
-		var resp_msg = (err === null) ? {msg: ''} : {msg: err};
-		res.send(resp_msg);
+	db.query(
+		sql,
+		[],
+		function (err, result) {
+			var resp_msg = (err === null) ? {msg: ''} : {msg: err};
+			res.send(resp_msg);
 	});
 });
 
