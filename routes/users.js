@@ -12,9 +12,14 @@ router.get('/userlist',function(req,res){
 	var sql = 'select * from people';
 	
 	db.query(sql, function (err, result) {
-    if (err) throw err;
+    if (err){ 
+		console.log(err);
+		console.log(err.stack);
+		throw err;
+	} else {
 		console.log("Result: " + result);
 		res.json(result);
+	}
   });
 		
 });
