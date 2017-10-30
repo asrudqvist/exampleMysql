@@ -8,7 +8,8 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/info', function(req, res, next) {
-  var info = process.env.MYSQLCONNSTR_localdb;
+  //var info = process.env.MYSQLCONNSTR_localdb;
+  var info = 'hello';
   res.render('info', { title: 'Info', info: info});
 });
 

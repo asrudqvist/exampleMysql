@@ -4,10 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// Database
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/nodetest2');
+// Database - MySQL
+var mysql = require('mysql')
+var conInfo = process.env.MYSQLCONNSTR_localdb;
+var db = mysql.createConnection(conInfo);
+db.connect(function(err) {
+  if (err){
+	  throw err;
+  }
+  console.log('You are now connected to mysql...')
+});
+
 
 
 var index = require('./routes/index');

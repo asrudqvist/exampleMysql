@@ -9,12 +9,14 @@ router.get('/', function(req, res, next) {
 // Get user list
 router.get('/userlist',function(req,res){
 	var db = req.db;
-	var collection = db.get('userlist');
-	var collection  = db.get('userlist');
-	collection.find({},{},function(e,docs){
-		res.json(docs);
-	});
+	var sql = 'select * from people';
 	
+	db.query(sql, function (err, result) {
+    if (err) throw err;
+		console.log("Result: " + result);
+		res.json(result);
+  });
+		
 });
 
 // Add user
