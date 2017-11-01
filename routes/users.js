@@ -17,7 +17,7 @@ router.get('/userlist',function(req,res){
 		console.log(err.stack);
 		throw err;
 	} else {
-		console.log("Result: " + result.toString());
+		console.log("Result: " + JSON.stringify(result));
 		res.json(result);
 	}
   });
@@ -28,9 +28,9 @@ router.get('/userlist',function(req,res){
 router.post('/adduser', function(req,res){
 	var db = req.db.db;
 	var sql = 'insert into people (age,email,fullname,gender,location,username) values (?,?,?,?,?,?)';
-	console.log('Req body = ['+req.body.toString()+']');
+	console.log('Req body = ['+JSON.stringify(req.body)+']');
 	var user = req.body;
-	console.log('add user ' + user.toString());
+	console.log('add user ' + JSON.stringify(user));
 	
 	db.query(
 		sql,
