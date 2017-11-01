@@ -43,28 +43,32 @@ router.post('/adduser', function(req,res){
 
 // Delete user
 router.delete('/deleteuser/:id', function(req,res){
-	var db = req.db;
-	var collection = db.get('userlist');
+	var db = req.db.db;
 	var userToDelete = req.params.id;
 	console.log('deleting user :' + userToDelete);
+	var sql = 'delete from people where id=?';
 	
-	collection.remove({'_id': userToDelete}, function(err){
-		var resp_msg = (err === null) ?  {msg: ''} : {msg: err};
-		res.send(resp_msg);
+	db.query(
+		sql,
+		[userToDelete],
+	    function(err,result){
+			var resp_msg = (err === null) ?  {msg: ''} : {msg: err};
+			res.send(resp_msg);
 	});
 });
 
 // Update User
 router.put('/putuser/:id', function(req,res){
-	var db = req.db;
-	var collection = db.get('userlist');
+	var db = req.db.db;
 	var userToUpdate = req.params.id;
-	console.log('deleting user :' + userToUpdate);
+	console.log('updating user :' + userToUpdate);
+	var user = req.body;
+	var sql = "update people set age=?,email=?,fullname=?,gender=?,location=?,username=? where id=?";
 	
-	collection.update(
-		{'_id': userToUpdate},
-		{$set: req.body},
-		function(err){
+	db.query(
+		sql,
+		[user.age,user.email,user.fullname,user.gender,user.location,user.username,userToUpdate],
+		function (err, result) {
 			var resp_msg = (err === null) ?  {msg: ''} : {msg: err};
 			res.send(resp_msg);
 		});
