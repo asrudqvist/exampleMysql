@@ -4,7 +4,7 @@ module.exports = function ()
 {
 	this.db;
 	var connobj;
-	//Database=localdb;Data Source=127.0.0.1:54989;User Id=azure;Password=6#vWHD_$
+	
 	var conInfo = process.env.MYSQLCONNSTR_localdb;
 	
 	function getConnObj (s)

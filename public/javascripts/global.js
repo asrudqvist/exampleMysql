@@ -29,7 +29,7 @@ var Users = {
 					+ '<td>' + this.email + '</td>'
 					+ '<td><a href="#" class="linkedit" rel="' + index + '">'
 						+ 'edit</a></td>'
-					+ '<td><a href="#" class="linkdeleteuser" rel="' + this._id + '">'
+					+ '<td><a href="#" class="linkdeleteuser" rel="' + this.id + '">'
 						+ 'delete</a></td>'
 					+ '</tr>';		
 			//console.log(Users.tableContent);
@@ -121,7 +121,7 @@ var Users = {
 		}
 	},
 	deleteUser: function(id){
-		//console.log('delete ' + id);
+		console.log('delete ' + id);
 			$.ajax({
 				type: 'DELETE',
 				url: '/users/deleteuser/' + id
