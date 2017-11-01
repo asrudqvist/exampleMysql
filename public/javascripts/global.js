@@ -167,7 +167,7 @@ var Users = {
 		$('#addUser fieldset input#inputUserAge').val(thisUserObject.age);
 		$('#addUser fieldset input#inputUserLocation').val(thisUserObject.location);
 		$('#addUser fieldset input#inputUserGender').val(thisUserObject.gender);
-		$('#addUser fieldset input#inputUserId').val(thisUserObject._id);
+		$('#addUser fieldset input#inputUserId').val(thisUserObject.id);
 		$('#addUser fieldset button#btnEditUser').prop('disabled', false);
 		$('#addUser fieldset button#btnAddUser').prop('disabled', true);
 		
